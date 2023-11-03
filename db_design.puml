@@ -1,0 +1,79 @@
+@startuml
+
+    entity users {
+        *id VARCHAR(255) PRIMARY KEY
+        *user_type INT
+        *password VARCHAR(255)
+        *email VARCHAR(255)
+        *first_name VARCHAR(255)
+        last_name VARCHAR(255)
+        gender VARCHAR(255)
+        profile_img TEXT
+        --
+        *date_created DATETIME
+        *date_updated DATETIME
+    }
+    
+    entity posts {
+        *id INT PRIMARY KEY AUTO_INCREMENT
+        *title VARCHAR(255)
+        *title_slug VARCHAR(255)
+        body LONGTEXT
+        preview_image TEXT
+        post_date DATE
+        location VARCHAR(255)
+        --
+        *date_created DATETIME
+        *date_updated DATETIME
+        --
+        *post_by VARCHAR(255) FOREIGN(users.id)
+        category_id INT FOREIGN(post_categories.id)
+        view_image VARCHAR(255) FOREIGN(post_images.id)
+    }
+
+    entity post_comments {
+        *id INT PRIMARY KEY
+        *comment TEXT
+        --
+        *date_created DATETIME
+        *date_updated DATETIME
+        --
+        *post_id INT FOREIGN(posts.id)
+        *user_id INT FOREIGN(users.id)
+    }
+
+    entity post_categories {
+        *id INT PRIMARY_KEY
+        *name VARCHAR(255)
+        *name_slug VARCHAR(255)
+        --
+        *date_created DATETIME
+        *date_updated DATETIME
+    }
+
+    entity post_images {
+        *id INT PRIMARY_KEY
+        *name VARCHAR(255)
+        *path TEXT
+        --
+        *date_created DATETIME
+        *date_updated DATETIME
+        --
+        *post_id INT FOREIGN(posts.id)
+    }
+
+    entity page_display_image {
+        *id INT PRIMARY_KEY
+        *path TEXT
+        *image_for VARCHAR(255)
+    }
+
+
+    users ||--o{ posts
+    users ||--o{ post_comments
+    posts ||--o{ post_comments
+    posts ||--o{ post_images
+    posts }o--o| post_categories
+
+
+@enduml
