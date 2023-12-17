@@ -6,7 +6,7 @@
 
     <div class="content">
         <a href="{{ route('homepage') }}" class="logo-hero">
-            Telegraf
+            TELEGRAF Today
         </a>
         <span class="page-hero-title">
             Admin Dashboard

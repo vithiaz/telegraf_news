@@ -10,7 +10,7 @@
             <div class="logo-wrapper">
                 <img src="{{ asset('img\logo.png') }}" alt="{{ config('app.name_slug', 'news') }}_logo">
                 <div class="brand">
-                    <span class="brand-name">Telegraf</span>
+                    <span class="brand-name">TELEGRAF Today</span>
                     {{-- <span class="page">Logo</span> --}}
                 </div>
             </div>

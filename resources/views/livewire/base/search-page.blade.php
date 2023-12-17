@@ -5,7 +5,7 @@
 <div class="search-page">
     <div class="container">
         <div class="page-path-section">
-            <span class="base-path"><a href="/">Telegraf</a></span>
+            <span class="base-path"><a href="/">TELEGRAF Today</a></span>
             <i class="fa-sharp fa-solid fa-angle-right"></i>
             <span class=""><a href="#">Pencarian</a></span>
             <i class="fa-sharp fa-solid fa-angle-right"></i>

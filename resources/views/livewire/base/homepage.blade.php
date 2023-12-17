@@ -16,7 +16,7 @@
                 <div class="image-container">
                     <img src="{{ asset('img/logo.png') }}" alt="{{ config('app.name_slug', 'news') }}_logo">
                 </div>
-                <span class="brand">Telegraf</span>
+                <span class="brand">TELEGRAF Today</span>
             </div>
             <div id="home-content-nav" class="header-nav">
                 <span class="active sport-nav"><a  href="{{ route('homepage') }}">Today</a></span>

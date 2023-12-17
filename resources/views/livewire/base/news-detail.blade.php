@@ -5,14 +5,14 @@
 <div class="news-detail-page">
     <div class="container">
         <div class="page-path-section">
-            <span class="base-path"><a href="/">Telegraf</a></span>
+            <span class="base-path"><a href="/">TELEGRAF Today</a></span>
             <i class="fa-sharp fa-solid fa-angle-right"></i>
             <span class=""><a href="#">Berita</a></span>
             <i class="fa-sharp fa-solid fa-angle-right"></i>
             <span class="active">{{ $post->title }}</span>
         </div>
         <div class="section-title">
-            <span class="title">Telegraf</span>
+            <span class="title">TELEGRAF Today</span>
             @if ($post->category)
                 <span class="category">/ {{ $post->category->name }}</span>
             @endif
@@ -38,7 +38,7 @@
                 <div class="content-body">
                     @if ($post->preview_image)                        
                         <div class="img-container">
-                            <img src="{{ asset('storage/'.$post->preview_image) }}" alt="FILL-THIS">
+                            <img src="{{ asset('storage/'.$post->preview_image) }}" alt="{{ $post->title }}">
                         </div>
                     @endif
                     <div class="post-body">
@@ -87,7 +87,7 @@
 </div>
 
 
-@push('scripts')
+@push('script')
     <script>
 
 

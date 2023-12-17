@@ -3,8 +3,8 @@
         <div id="nav-logo" class="logo">
             <img src="{{ asset('img\logo.png') }}" alt="{{ config('app.name_slug', 'news') }}_logo">
             <div class="brand">
-                <span class="brand-name">Telegraf</span>
-                {{-- <span class="page">Brand</span> --}}
+                <span class="brand-name">TELEGRAF</span>
+                <span class="page">Today</span>
                 <i class="fa-sharp fa-solid fa-angle-down"></i>
             </div>
         </div>

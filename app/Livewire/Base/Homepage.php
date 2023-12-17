@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Pages;
 use Livewire\Component;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class Homepage extends Component
 {
@@ -20,6 +21,8 @@ class Homepage extends Component
     public $popular_post;
     
     public function mount() {
+        
+
         $this->post_Query = Post::with(['category']);
         $this->posts = $this->post_Query->orderBy('created_at', 'DESC')->get();
 
