@@ -1,0 +1,326 @@
+@use '../_var' as *;
+
+.add-news-page {
+
+    .container {
+        display: flex;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        justify-content: center;
+        font-size: 1rem;
+
+        .content-card {
+            width: 100%;
+            height: fit-content;
+            padding: 20px 0;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+
+            & > * {
+                padding: 0 20px;
+            }
+
+            & > :not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            // Each select input above content-card
+            .form-select, .form-control {
+                border-radius: 4px;
+                border: none;
+                background-color: $BorderVeryLight;
+            }
+
+            .content-title {
+                @include slot-title-style($PrimaryBlue);
+            }
+
+            .add-pages {
+                display: grid;
+                grid-template-columns: 0.4fr 1fr;
+                gap: 10px;
+                align-items: center;
+                margin-bottom: 0;
+
+                .input-name {
+                    font-weight: 600;
+                }
+            }
+
+            .main-input {
+                padding-top: 20px;
+                width: 100%;
+                // height: fit-content;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                max-height: 10%;
+                overflow-y: hidden;
+                max-height: 0;
+                transition: all 0.6s ease-in-out;
+                opacity: 0;
+
+                &.show {
+                    max-height: 1000vh;
+                    opacity: 1;
+                }
+
+                small.error {
+                    width: 100%;
+                    font-size: 0.8rem;
+                    color: $PrimaryRed;
+                    padding-left: 10px;
+                }
+
+                .input-category {
+                    display: grid;
+                    grid-template-columns: 0.4fr 1fr;
+                    gap: 10px;
+                    align-items: center;
+    
+                }
+    
+                .input-profile-image {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 20px;
+                    row-gap: 5px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    
+                    .image-main-container {
+                        width: 320px;
+                        height: fit-content;
+                        min-height: 250px;
+                        background-color: $BorderVeryLight;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+    
+                        .no-image-text {
+                            color: $TextLighter;
+                            font-size: 0.9em;
+                        }
+    
+                        .add-image-button {
+                            @include button-default($bg_color: $PrimaryBlack);
+                            border-radius: 4px;
+                            height: 35px;
+    
+                            &:hover {
+                                cursor: pointer;
+                                color: black;
+                                background-color: white;
+                                border: 1px solid black;
+                            }
+                        }
+    
+                        .image-container {
+                            width: 100%;
+                            height: fit-content;
+                            position: relative;
+    
+                            img {
+                                width: 100%;
+                                height: fit-content;
+                                object-fit: cover;
+                            }
+    
+                            .option-wrapper {
+                                display: none;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                background-color: rgba($PrimaryBlack, 0.7);
+                                flex-direction: column;
+                                gap: 5px;
+                                align-items: center;
+                                justify-content: center;
+    
+                                .remove-image-button {
+                                    @include button-default($bg_color: $PrimaryBlack);
+                                    border: 1px solid $PrimaryRed;
+                                    border-radius: 4px;
+                                    height: 35px;
+                                    display: flex;
+                                    flex-direction: row;
+                                    gap: 8px;
+                                    align-items: center;
+                                    justify-content: center;
+        
+                                    &:hover {
+                                        cursor: pointer;
+                                        background-color: $PrimaryRed;
+    
+                                        i {
+                                            color: $PrimaryBlack;
+                                        }
+                                    }
+                                    i {
+                                        color: $PrimaryRed;
+                                    }
+                                    span {
+                                        color: white;
+                                    }
+                                }
+                            }
+    
+                            &:hover {
+                                .option-wrapper {
+                                    cursor: pointer;
+                                    display: flex;
+                                }
+                            }
+                            
+                        }
+                        
+                        .no-image-container {
+                            width: 100%;
+                            height: 100%;
+                            display: grid;
+                            place-items: center;
+                            gap: 10px;
+    
+                            &.hide {
+                                display: none;
+                            }
+    
+                            input {
+                                display: none;
+                            }
+    
+                            .input-image-button {
+                                @include button-default($bg_color: $PrimaryBlack);
+    
+                                &:hover {
+                                    cursor: pointer;
+                                    background-color: lighten($PrimaryBlack, 20%);
+                                }
+                            }
+                        }
+    
+                        .progress {
+                            width: 80%;
+                            height: 25px;
+                            position: absolute;
+                            top: 50%;
+                            display: none;
+    
+                            &.show {
+                                display: flex;
+                            }
+    
+                            .progress-bar {
+                                background-color: $PrimaryBlue;
+                            }
+                        }
+    
+                    }
+    
+                    .desc {
+                        flex-basis: 150px;
+                        flex-grow: 1;
+                        font-size: 0.8em;
+                    }
+                }
+    
+                .input-info {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 80px;
+                    row-gap: 10px;
+                    align-items: center;
+                    flex-wrap: wrap;
+    
+                    .input-date {
+                        flex-grow: 1;
+                        display: grid;
+                        grid-template-columns: 0.6fr 1.4fr;
+                        gap: 10px;
+                        align-items: center;
+                    }
+    
+                    .input-location {
+                        flex-grow: 1;
+                        display: grid;
+                        grid-template-columns: 0.6fr 1.4fr;
+                        gap: 10px;
+                        align-items: center;
+    
+                    }
+                }
+    
+                .input-body-news {
+                    width: 100%;
+                    overflow: hidden;
+
+                    // Summernote editor
+                    @include summernote-styles();
+                }
+    
+                .button-wrapper {
+                    width: 100%;
+                    height: fit-content;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    align-items: center;
+                    justify-content: flex-end;
+    
+                    .post-button {
+                        @include button-default($bg_color: $PrimaryBlack);
+                        border-radius: 4px;
+                        
+                        &:hover {
+                            cursor: pointer;
+                            background-color: lighten($PrimaryBlack, 20%);
+                            color: white;
+                        }
+                    }
+                    
+                    .delete-button {
+                        @include button-default($bg_color: $PrimaryRed);
+                        border-radius: 4px;
+                        
+                        &:hover {
+                            cursor: pointer;
+                            background-color: darken($PrimaryRed, 20%);
+                            color: white;
+                        }    
+                    }
+
+                    .save-button {
+                        @include button-default($bg_color: $PrimaryBlue);
+                        border-radius: 4px;
+                        
+                        &:hover {
+                            cursor: pointer;
+                            background-color: darken($PrimaryBlue, 20%);
+                            color: white;
+                        }
+                    }
+
+                    .abort-button {
+                        @include button-default($bg_color: $BorderLight);
+                        color: black;
+                        border-radius: 4px;
+                        
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $PrimaryBlack;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

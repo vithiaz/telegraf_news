@@ -1,0 +1,112 @@
+// @use '../_var' as *;
+@import '../_var';
+
+$primary_color: $PrimaryRed;
+
+.category-page {
+    padding-top: 80px;
+    
+    .container {
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 20px;
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            
+            .content-head {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .secton-title {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    padding-left: $TextAfterBoxPaddingLeft;
+                    position: relative;
+    
+                    .sub-title {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        color: $TextLighter;
+                    }
+                    
+                    .title {
+                        letter-spacing: 3px;
+                        text-transform: uppercase;
+                        font-size: 1.2rem;
+                        font-weight: 600;
+    
+                        &::first-letter {
+                            color: $primary_color;
+                        }
+                    }
+    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        width: $BoxBeforeTitleWidth;
+                        background-color: $primary_color;
+                    }
+                }
+    
+                .categories-card-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    flex-wrap: wrap;
+    
+                    .card {
+                        @include category-card-small();
+                    }
+                    .more-btn {
+                        background-color: $primary_color;
+    
+                        &:hover {
+                            background-color: $PrimaryBlack;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .content-body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .card-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: center;
+                    gap: 20px;
+                    width: 100%;
+                    height: fit-content;
+                    font-size: 0.9rem;
+                    flex-wrap: wrap;
+
+                    .no-item {
+                        @include wrapper-empty;
+                    }
+                }
+
+                .card-pagination {
+                    padding: 10px 0;
+
+                    @include pagination-style($bg_color: $PrimaryRed, $links_color: $PrimaryRed);                }
+            }
+
+
+
+        }
+    }
+}

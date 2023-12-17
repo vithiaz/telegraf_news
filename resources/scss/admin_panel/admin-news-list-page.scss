@@ -1,0 +1,123 @@
+@use '../_var' as *;
+
+.news-list-page {
+    
+    .container {
+        display: flex;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        justify-content: center;
+
+        .content-card {
+            width: 100%;
+            height: fit-content;
+            padding: 10px 20px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .content-header {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+
+                .content-title {
+                    @include slot-title-style($PrimaryBlue);
+                    flex-basis: 200px;
+                    flex-grow: 1;
+                }
+
+                .form-select {
+                    flex-basis: 240px;
+                    background-color: white;
+                }
+                
+                .content-search {
+                    flex-basis: 250px;
+                    flex-grow: 1;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    gap: 10px;
+
+                    input {
+                        width: 100%;
+                        border: 0;
+                        background-color: transparent;
+                        border-bottom: 1px solid $CardBorder;
+                        
+                        &:focus {
+                            outline: none;
+                            border: none;
+                            border-bottom: 1px solid black;
+                        }
+                    }
+
+                    i {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .content-body {
+                width: 100%;
+                height: fit-content;
+
+                table {
+
+                    thead {
+
+                        tr {
+
+                            td {
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        
+                        tr {
+
+                            .empty {
+                                text-align: center;
+                                padding: 120px 0;
+                                color: $TextLighter;
+                            }
+                        }
+                    }
+                    
+                    .edit-post-button {
+                        @include button-default($bg_color: $CardBorder);
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        text-decoration: none;
+                        color: white;
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $PrimaryBlack;
+                            color: white;
+                        }
+                    }
+
+                }
+
+                .pagination-wrapper {
+                    display: grid;
+                    place-items: center;
+                    width: 100%;
+
+                    @include pagination-style();
+                }
+            }
+        }
+    }
+}

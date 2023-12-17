@@ -1,0 +1,321 @@
+@import '_var.scss';
+
+.welcome-page {
+
+    .page-section-wrapper {
+        width: 100%;
+        height: 90vh;
+        min-height: 400px;
+        max-height: 700px;
+        position: relative;
+
+        .swiper-wrapper {
+            width: 100%;
+            height: 100%;
+
+            .page-item {
+                width: 100%;
+                height: 100%;
+                background-color: whitesmoke;
+                position: relative;
+                background-size: cover;
+                
+                .container {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    align-items: center;
+                    height: 100%;
+                    
+                    .body {
+                        width: 100%;
+                        max-width: 450px;
+                        height: fit-content;
+                        padding: 20px 10px;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: -100vh;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: rgba($color: #000000, $alpha: 0.6);
+                            z-index: -1;
+                        }
+
+    
+                        .content {
+                            width: 100%;
+                            height: fit-content;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+    
+                            .page-title-container {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: flex-start;
+    
+                                span {
+                                    font-size: 2.5rem;
+                                    font-weight: 600;
+                                    letter-spacing: 3px;
+                                    text-align: start;
+                                    color: white;
+                                }
+                            }
+    
+                            .button-container {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: flex-start;
+                                height: fit-content;
+                                
+                                .redirect-btn {
+                                    @include button-default ($font_weight: 600, $bg_color: $PrimaryBlue);
+    
+                                    &:hover {
+                                        cursor: pointer;
+                                        color: black;
+                                    }
+    
+                                    &.red-bg {
+                                        background-color: $PrimaryRed;
+                                        &:hover {
+                                            background-color: lighten($PrimaryRed, 12%);
+                                        }    
+                                    }
+                                    &.green-bg {
+                                        background-color: $PrimaryGreen;
+                                        &:hover {
+                                            background-color: lighten($PrimaryGreen, 12%);
+                                        }
+                                    }
+                                    &.yellow-bg {
+                                        background-color: $PrimaryYellow;
+                                        color: black;
+                                        &:hover {
+                                            background-color: darken($PrimaryYellow, 12%);
+                                        }    
+                                    }
+                                }
+    
+                            }
+    
+                        }
+                    }
+                }
+    
+        
+            }
+    
+
+        }
+
+        .pagination-wrapper {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 20px;
+            z-index: 3;
+            
+            .container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 10px;
+                padding: 10px 20px;
+
+                .swiper-pagination-bullet {
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: white;
+                    box-shadow: $BoxShadow;
+                    transition: all ease-in-out 0.3s;
+    
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $PrimaryBlue;
+                        border-radius: 7px;
+                        width: 40px;
+                    }
+
+                    &.swiper-pagination-bullet-active {
+                        border-radius: 7px;
+                        width: 40px;
+                    }
+
+                    // &.red-bg {
+                    //     &.active, &:hover {
+                    //         background-color: $PrimaryRed;
+                    //     }
+                    // }
+                    // &.green-bg {
+                    //     &.active, &:hover {
+                    //         background-color: $PrimaryGreen;
+                    //     }
+                    // }
+                    // &.yellow-bg {
+                    //     &.active, &:hover {
+                    //         background-color: $PrimaryYellow;
+                    //     }
+                    // }
+    
+                }
+            }
+
+        }
+
+
+        
+
+
+    }
+
+    .page-information-wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .hero-title-container {
+                width: 100%;
+
+                span {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                }
+            }
+
+            .body-main-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+
+                .page-wrapper {
+                    flex-basis: 100%;
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    column-gap: 40px;
+                    row-gap: 10px;
+                    flex-wrap: wrap;
+                    transition: all 0.3s ease-in-out;
+
+                    li {
+                        position: relative;
+                        width: fit-content;
+                        transition: all 0.3s ease-in-out;
+                        
+                        &:hover {
+                            cursor: pointer;
+                        }
+                        
+                        a {
+                            text-decoration: none;
+                            color: black;
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: nowrap;
+                            gap: 5px;
+                            align-items: center;
+                            width: fit-content;
+                            height: fit-content;
+
+                            .image-container {
+                                width: 40px;
+                                height: fit-content;
+    
+                                img {
+                                    width: 100%;
+                                    height: fit-content;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .label {
+                                display: flex;
+                                flex-direction: row;
+                                gap: 5px;
+                                max-width: 0;
+                                overflow: hidden;
+                                transition: all 0.3s ease-in-out;
+                                position: relative;
+                                font-weight: 600;
+                                
+                                
+                                span {
+                                    width: fit-content;
+                                    display: inline-block;
+                                    white-space: nowrap;
+
+                                    .sport {
+                                        color: $PrimaryRed;
+                                    }
+                                    .env {
+                                        color: $PrimaryGreen;
+                                    }
+                                    .history {
+                                        color: $PrimaryYellow;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.hovered {
+                            a .label {
+                                max-width: 200px;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .social-media-wrapper {
+                @include social-media-icon-hover;
+
+                display: flex;
+                flex-direction: row;
+                column-gap: 10px;
+                row-gap: 10px;
+
+                svg {
+                    transform: scale(0.9);
+                }
+
+
+                // a {
+                //     font-size: 0.8rem;
+                //     text-decoration: none;
+
+                //     &:hover {
+                //         cursor: pointer;
+
+                //     }
+                // }
+            }
+
+
+
+
+        }
+    }
+}

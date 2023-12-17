@@ -1,0 +1,274 @@
+.auth-main {
+  padding-top: 80px;
+}
+
+.root-navbar {
+  background-color: white !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.root-navbar .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+.root-navbar .container .logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: fit-content;
+  column-gap: 20px;
+}
+.root-navbar .container .logo-container span {
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.root-navbar .container .logo-container span::first-letter {
+  color: #4270EE;
+}
+.root-navbar .container .logo-container img {
+  height: 40px;
+  width: fit-content;
+  object-fit: cover;
+}
+.root-navbar .container .menu-wrapper {
+  flex-basis: 400px;
+  flex-grow: 1;
+  font-size: 1rem;
+}
+.root-navbar .container .menu-wrapper ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+.root-navbar .container .menu-wrapper ul li {
+  padding: 0 10px;
+  position: relative;
+}
+.root-navbar .container .menu-wrapper ul li a {
+  text-decoration: none;
+  color: black;
+}
+.root-navbar .container .menu-wrapper ul li a:hover {
+  cursor: pointer;
+}
+.root-navbar .container .menu-wrapper ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0%;
+  height: 3px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+.root-navbar .container .menu-wrapper ul li.sport::after {
+  background-color: #DD3333;
+}
+.root-navbar .container .menu-wrapper ul li.env::after {
+  background-color: #58EF3A;
+}
+.root-navbar .container .menu-wrapper ul li.history::after {
+  background-color: #E3E31F;
+}
+.root-navbar .container .menu-wrapper ul li:hover::after {
+  width: 100%;
+}
+.root-navbar .container .menu-wrapper ul li:hover a {
+  font-weight: 600;
+}
+.root-navbar .container .auth-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 50px;
+  column-gap: 20px;
+  font-weight: 1rem;
+  position: relative;
+  max-width: 250px;
+  height: fit-content;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.root-navbar .container .auth-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #E8E8E8;
+  transform: translateX(20px);
+}
+.root-navbar .container .auth-container .login a, .root-navbar .container .auth-container .register a, .root-navbar .container .auth-container .username a {
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #4270EE;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 1px solid #4270EE;
+}
+.root-navbar .container .auth-container .login a:hover, .root-navbar .container .auth-container .register a:hover, .root-navbar .container .auth-container .username a:hover {
+  cursor: pointer;
+  background-color: #1C1C1C;
+}
+.root-navbar .container .auth-container .login.login a, .root-navbar .container .auth-container .register.login a, .root-navbar .container .auth-container .username.login a {
+  background-color: white;
+  color: #4270EE;
+}
+.root-navbar .container .auth-container .login.login a:hover, .root-navbar .container .auth-container .register.login a:hover, .root-navbar .container .auth-container .username.login a:hover {
+  background-color: #1C1C1C;
+  color: white;
+}
+.root-navbar .container .auth-container .logged-in {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.root-navbar .container .auth-container .logged-in .username {
+  font-weight: 600;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+.root-navbar .container .auth-container .logged-in #auth-dropdown-button {
+  padding: 10px;
+  margin-left: 5px;
+}
+.root-navbar .container .auth-container .logged-in #auth-dropdown-button:hover {
+  cursor: pointer;
+  background-color: #E8E8E8;
+}
+.root-navbar .container .auth-container .logged-in #auth-dropdown-button.active {
+  background-color: #E8E8E8;
+}
+.root-navbar .container .auth-container .logged-in .dropdown {
+  position: fixed;
+  z-index: 104;
+  top: 60px;
+  right: 0;
+  width: 220px;
+  height: 100px;
+  height: fit-content;
+  background-color: white;
+  transform: translateY(-100vh);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+  opacity: 0;
+}
+.root-navbar .container .auth-container .logged-in .dropdown.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+.root-navbar .container .auth-container .logged-in .dropdown ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
+.root-navbar .container .auth-container .logged-in .dropdown ul li {
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  column-gap: 10px;
+}
+.root-navbar .container .auth-container .logged-in .dropdown ul li i {
+  display: grid;
+  place-items: center;
+}
+.root-navbar .container .auth-container .logged-in .dropdown ul li a {
+  color: black;
+  text-decoration: none;
+}
+.root-navbar .container .auth-container .logged-in .dropdown ul li:hover {
+  background-color: #E8E8E8;
+}
+.root-navbar.dark {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+.root-navbar.dark.scroll-up {
+  background-color: #1C1C1C !important;
+}
+.root-navbar.dark .brand {
+  color: white !important;
+}
+.root-navbar.dark .menu-wrapper li a {
+  color: white !important;
+}
+.root-navbar.dark .auth-container::before {
+  background-color: rgb(80, 80, 80);
+}
+.root-navbar.dark .login a {
+  background-color: transparent !important;
+  color: white;
+}
+.root-navbar.dark .logged-in .username {
+  color: white;
+}
+.root-navbar.dark .logged-in #auth-dropdown-button {
+  color: white;
+}
+.root-navbar.dark .logged-in #auth-dropdown-button:hover, .root-navbar.dark .logged-in #auth-dropdown-button.active {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+@media screen and (max-width: 991px) {
+  .root-navbar .container .menu-wrapper {
+    flex-basis: 100%;
+  }
+  .root-navbar .container .menu-wrapper ul {
+    justify-content: space-evenly;
+    column-gap: 5px;
+  }
+  .root-navbar .container .auth-container {
+    padding-left: 0;
+  }
+  .root-navbar .container .auth-container::before {
+    display: none;
+  }
+}
+@media screen and (max-width: 520px) {
+  .root-navbar .container .logo-container {
+    padding: 0;
+  }
+  .root-navbar .container .logo-container span {
+    display: none;
+  }
+  .root-navbar .container .auth-container {
+    column-gap: 5px;
+  }
+  .root-navbar .container .auth-container span {
+    padding: 5px;
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 330px) {
+  .root-navbar .container .auth-container {
+    max-width: 180px;
+  }
+}/*# sourceMappingURL=auth_app.css.map */

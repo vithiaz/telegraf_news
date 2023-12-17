@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +21,26 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $user_generator_rules = [
+            'table' => 'users',
+            'length' => '10',
+            'prefix' => date('ymd'),
+        ];
+        User::create([
+            'id' => IdGenerator::generate($user_generator_rules),
+            'email' => 'admin@mail.com',
+            'user_type' => 1,
+            'first_name' => 'Admin',
+            'password' => Hash::make('admin1234'),
+        ]);
+        User::create([
+            'id' => IdGenerator::generate($user_generator_rules),
+            'email' => 'user@mail.com',
+            'user_type' => 0,
+            'first_name' => 'TestUserOne',
+            'password' => Hash::make('user1234'),
+        ]);
+
     }
 }

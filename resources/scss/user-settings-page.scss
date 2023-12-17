@@ -1,0 +1,390 @@
+// @use '../_var' as *;
+@import '_var.scss';
+
+.user-settings-page {
+    background-color: white;
+    min-height: 400px;
+    flex-grow: 1;
+    padding-top: 70px;
+
+    .hero-top-waves {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 88;
+        overflow: hidden;
+        min-width: 280px;
+        height: fit-content;
+        
+        .box {
+            width: 100%;
+            height: 70px;
+            background-color: $BorderVeryLight;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+
+            path {
+                fill: $BorderVeryLight;
+            }
+        } 
+    }
+
+    .main-section {
+        position: relative;
+        z-index: 89;
+        font-size: 1rem;
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-bottom: 40px;
+
+            .profile-section-wrapper {
+                padding-top: 20px;
+                flex-grow: 1;
+                flex-basis: 350px;
+                height: fit-content;
+                
+                // Content Settings -------
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: baseline;
+                justify-content: flex-start;
+                align-content: flex-start;
+                gap: 10px;
+                
+                .title {
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                    font-size: 1.3em;
+                }
+
+                .profile-wrapper {
+                    width: 100%;
+                    height: fit-content;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    row-gap: 10px;
+                    column-gap: 20px;
+                    align-items: center;
+                    justify-content: flex-start;
+                    transition: all ease-in-out 0.3s;
+
+
+                    .image-main-container {
+                        width: fit-content;
+                        height: fit-content;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+
+                        .image-container {
+                            width: 220px;
+                            height: 220px;
+                            position: relative;
+                            border-radius: 50%;
+                            overflow: hidden;
+    
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+
+                            .option-wrapper {
+                                display: none;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                background-color: rgba($PrimaryBlack, 0.7);
+                                flex-direction: column;
+                                gap: 5px;
+                                align-items: center;
+                                justify-content: center;
+    
+                                .remove-image-button {
+                                    @include button-default($bg_color: $PrimaryBlack);
+                                    border: 1px solid $PrimaryBlue;
+                                    border-radius: 4px;
+                                    height: 35px;
+                                    display: flex;
+                                    flex-direction: row;
+                                    gap: 8px;
+                                    align-items: center;
+                                    justify-content: center;
+        
+                                    &:hover {
+                                        cursor: pointer;
+                                        background-color: $PrimaryBlue;
+    
+                                        i {
+                                            color: $PrimaryBlack;
+                                        }
+                                    }
+                                    i {
+                                        color: $PrimaryBlue;
+                                    }
+                                    span {
+                                        color: white;
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                .option-wrapper {
+                                    cursor: pointer;
+                                    display: flex;
+                                }
+                            }
+                            
+                        }
+     
+                        .no-image-container {
+                            width: 220px;
+                            height: 220px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px;
+                            background-color: $BorderVeryLight;
+    
+                            &.hide {
+                                display: none;
+                            }
+    
+                            input {
+                                display: none;
+                            }
+    
+                            .input-image-button {
+                                @include button-default($bg_color: $BorderLight);
+                                color: black;
+    
+                                &:hover {
+                                    cursor: pointer;
+                                    background-color: lighten($PrimaryBlack, 20%);
+                                }
+                            }
+
+                            .error {
+                                color: red;
+                            }
+                        }
+
+                        .progress {
+                            width: 80%;
+                            height: 25px;
+                            position: absolute;
+                            top: 50%;
+                            display: none;
+    
+                            &.show {
+                                display: flex;
+                            }
+    
+                            .progress-bar {
+                                background-color: $PrimaryBlue;
+                            }
+                        }
+
+                    }
+
+                    .user-detail-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 5px;
+                        column-gap: 10px;
+                        transition: all ease-in-out 0.3s;
+
+
+                        .mail {
+                            font-weight: 600;
+                            font-size: 1.2em;
+                        }
+
+                        .button-container {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            gap: 5px;
+                            align-items: center;
+                            justify-content: flex-start;
+
+                            max-height: 0vh;
+                            overflow: hidden;
+                            transition: all ease-in-out 0.3s;
+
+
+                            &.active {
+                                max-height: 100vh;
+                            }
+
+                            .btn-confirm {
+                                @include button-default ($font_weight: 600, $bg_color: $PrimaryBlue);
+    
+                                &:hover {
+                                    cursor: pointer;
+                                    background-color: lighten($PrimaryBlue, 15%);
+                                }
+                            }
+                            .btn-abort {
+                                @include button-default ($font_weight: 600, $bg_color: $PrimaryRed);
+    
+                                &:hover {
+                                    cursor: pointer;
+                                    background-color: lighten($PrimaryRed, 15%);
+                                }
+                            }
+                        }
+
+                    }
+
+
+                }
+
+            }
+
+            .details-card {
+                background-color: white;
+                width: 450px;
+                height: fit-content;
+                padding: 20px;
+                margin-top: 20px;
+                box-shadow: $BoxShadow;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                z-index: 100;
+
+                .card-title {
+                    text-transform: uppercase;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                    letter-spacing: 3px;
+
+                    &::first-letter {
+                        color: $PrimaryRed;
+                    }
+                }
+                
+                .card-form {
+                    width: 100%;
+                    height: fit-content;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    
+                    .gender-wrapper {
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: 0.5fr 0.5fr;
+    
+                        .gender {
+                            font-weight: 600;
+                        }
+                    }
+
+                    .form-floating {
+                        width: 100%;
+                        margin-bottom: 8px;
+                        
+                        input {
+                            background-color: $BorderVeryLight;
+                            
+                            &:not(.is-invalid) {
+                                border: 0;
+                            }
+                        }
+                    }
+    
+                    small.error {
+                        padding-left: 10px;
+                        color: $PrimaryRed;
+                    }
+        
+                    .check-box {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-start;
+                        justify-content: space-around;
+                        flex-wrap: wrap;
+    
+                        .form-check input:hover, .form-check label:hover {
+                            cursor: pointer;
+                        }
+    
+                        .error {
+                            width: 100%;
+                        }
+                    }
+    
+                    .button-container {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        align-items: center;
+    
+                        button {
+                            @include button-default ($font_weight: 600, $bg_color: $PrimaryBlack);
+    
+                            &:hover {
+                                cursor: pointer;
+                                background-color: $PrimaryBlue;
+                            }
+                        }
+                    }
+                }
+
+
+                .card-content-separator {
+                    margin-top: 5px;
+                }
+
+
+            }
+
+        }
+        
+
+
+    }
+
+
+
+}
+
+// Responsive Design
+@media screen and (max-width: 575px) {
+    .user-settings-page {
+
+        .main-section {
+
+            .container {
+
+                .profile-section-wrapper {
+
+                    .profile-wrapper {
+                        justify-content: space-evenly;
+                    }
+                }
+            }
+        }
+        
+    }
+}

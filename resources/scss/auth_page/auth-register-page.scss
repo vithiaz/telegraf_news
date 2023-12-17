@@ -1,0 +1,273 @@
+// @use '../_var' as *;
+@import '../_var.scss';
+
+
+.register-page {
+    background-color: white;
+
+    .hero-top-waves {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 88;
+        overflow: hidden;
+        min-width: 280px;
+        height: fit-content;
+        
+        .box {
+            width: 100%;
+            height: 60px;
+            background-color: $BorderVeryLight;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+
+            path {
+                fill: $BorderVeryLight;
+            }
+        } 
+    }
+
+    .main-section {
+        position: relative;
+        z-index: 89;
+        font-size: 1rem;
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-bottom: 40px;
+
+            .section-text {
+                padding-top: 20px;
+                flex-grow: 1;
+                flex-basis: 350px;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: baseline;
+                justify-content: flex-start;
+                align-content: flex-start;
+                gap: 10px;
+
+                .title {
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                    font-size: 1.3em;
+                }
+
+                .subtitle {
+                    font-size: 0.9em;
+                    padding-top: 10px;
+                    text-align: justify;
+                }
+
+                .page-wrapper {
+                    flex-basis: 100%;
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    column-gap: 5px;
+                    row-gap: 5px;
+                    flex-wrap: wrap;
+                    transition: all 0.3s ease-in-out;
+
+                    li {
+                        position: relative;
+                        width: fit-content;
+                        transition: all 0.3s ease-in-out;
+                        
+                        &:hover {
+                            cursor: pointer;
+                        }
+                        
+                        a {
+                            text-decoration: none;
+                            color: black;
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: nowrap;
+                            gap: 5px;
+                            align-items: center;
+                            width: fit-content;
+                            height: fit-content;
+
+                            .image-container {
+                                width: 40px;
+                                height: fit-content;
+    
+                                img {
+                                    width: 100%;
+                                    height: fit-content;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .label {
+                                display: flex;
+                                flex-direction: row;
+                                gap: 5px;
+                                max-width: 0;
+                                overflow: hidden;
+                                transition: all 0.3s ease-in-out;
+                                position: relative;
+                                font-weight: 600;
+                                
+                                
+                                span {
+                                    width: fit-content;
+                                    display: inline-block;
+                                    white-space: nowrap;
+
+                                    .sport {
+                                        color: $PrimaryRed;
+                                    }
+                                    .env {
+                                        color: $PrimaryGreen;
+                                    }
+                                    .history {
+                                        color: $PrimaryYellow;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.hovered {
+                            a .label {
+                                max-width: 200px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .register-card {
+                background-color: white;
+                width: 450px;
+                height: fit-content;
+                padding: 20px;
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                box-shadow: $BoxShadow;
+
+                .form-floating {
+                    width: 100%;
+                    margin-bottom: 8px;
+                    
+                    input {
+                        background-color: $BorderVeryLight;
+                        
+                        &:not(.is-invalid) {
+                            border: 0;
+                        }
+                    }
+                }
+
+                small.error {
+                    padding-left: 10px;
+                    color: $PrimaryRed;
+                }
+
+                .card-title {
+                    text-transform: uppercase;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                    letter-spacing: 3px;
+
+                    &::first-letter {
+                        color: $PrimaryRed;
+                    }
+                }
+
+                .check-box {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+
+                    .form-check input:hover, .form-check label:hover {
+                        cursor: pointer;
+                    }
+
+                    .error {
+                        width: 100%;
+                    }
+                }
+
+                .button-container {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    button {
+                        @include button-default ($font_weight: 600, $bg_color: $PrimaryBlack);
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: $PrimaryBlue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .register-page {
+
+        .main-section {
+
+            .container {
+
+                .section-text {
+
+                    .page-wrapper {
+                        justify-content: center;
+                    }
+                }
+
+                .register-card {
+                    margin-top: 0;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .register-page {
+
+        .main-section {
+
+            .container {
+
+                .register-card {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    flex-grow: 1;
+                }
+            }
+        }
+
+    }
+}

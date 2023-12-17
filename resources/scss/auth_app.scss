@@ -1,0 +1,373 @@
+// @use '_var' as *;
+@import '_var.scss';
+
+
+.auth-main {
+    padding-top: 80px;
+}
+
+// Navbar
+.root-navbar {
+    background-color: white !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 20px;
+
+
+        .logo-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            width: fit-content;
+            column-gap: 20px;
+    
+            span {
+                font-size: 1.1rem;
+                color: black;
+                font-weight: 600;
+                letter-spacing: 1px;
+    
+                &::first-letter {
+                    color: $PrimaryBlue;
+                }
+            }
+
+            img {
+                height: 40px;
+                width: fit-content;
+                object-fit: cover;
+            }
+        }
+    
+        .menu-wrapper {
+            flex-basis: 400px;
+            flex-grow: 1;
+            font-size: 1rem;
+    
+            ul {
+                list-style-type: none;
+                display: flex;
+                flex-direction: row;
+                column-gap: 40px;
+                margin: 0;
+                padding: 0;
+                align-items: center;
+                justify-content: flex-end;
+    
+                li {
+                    padding: 0 10px;
+                    position: relative;
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        width: 0%;
+                        height: 3px;
+                        border-radius: 4px;
+                        transition: all 0.2s ease-in-out;
+                    }
+                    &.sport::after {
+                        background-color: $PrimaryRed;
+                    }
+                    &.env::after {
+                        background-color: $PrimaryGreen;
+                    }
+                    &.history::after {
+                        background-color: $PrimaryYellow;
+                    }
+
+                    &:hover {
+                        &::after {
+                            width: 100%;
+                        }
+
+                        a {
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+    
+        }
+    
+        .auth-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding-left: 50px;
+            column-gap: 20px;
+            font-weight: 1rem;
+            position: relative;
+            max-width: 250px;
+            height: fit-content;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 1px;
+                background-color: $BorderLight;
+                transform: translateX(20px);
+            }
+
+            .login, .register, .username {
+
+                a {
+                    text-decoration: none;
+                    padding: 5px 10px;
+                    background-color: $PrimaryBlue;
+                    color: white;
+                    border-radius: 4px;
+                    font-weight: 600;
+                    border: 1px solid $PrimaryBlue;
+                    
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $PrimaryBlack;
+                    }
+                }
+                
+                &.login a {
+                    background-color: white;
+                    color: $PrimaryBlue;
+                    
+                    &:hover {
+                        background-color: $PrimaryBlack;
+                        color: white;
+                    }
+                }
+            }
+
+            .logged-in {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+
+                .username {
+                    font-weight: 600;
+                    // max-width: 100%;
+                    display:inline-block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 200px;
+                }
+        
+                #auth-dropdown-button {
+                    padding: 10px;
+                    margin-left: 5px;
+                    
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $BorderLight;
+                    }
+                    
+                    &.active {
+                        background-color: $BorderLight;
+                    }
+                }
+    
+                .dropdown {
+                    position: fixed;
+                    z-index: 104;
+                    top: $NavbarDefaultHeight;
+                    right: 0;
+                    width: 220px;
+                    height: 100px;
+                    height: fit-content;
+                    background-color: white;
+                    transform: translateY(-100vh);
+                    box-shadow: $BoxShadow;
+                    transition: all 0.3s ease-in-out;
+                    border-radius: 4px;
+                    opacity: 0;
+                    
+                    &.active {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+    
+                    ul {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-gap: 5px;
+                        
+                        li {
+                            padding: 10px 0;
+                            display: grid;
+                            grid-template-columns: 40px 1fr;
+                            column-gap: 10px;
+                            
+    
+                            i {
+                                display: grid;
+                                place-items: center;
+                            }
+                            a {
+                                color: black;
+                                text-decoration: 
+                                none;
+                            }
+    
+                            &:hover {
+                                background-color: $BorderLight;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    &.dark {
+        background-color: rgba($color: #000000, $alpha: 0.7) !important;
+        
+        &.scroll-up {
+            background-color: $PrimaryBlack !important;
+        }
+
+        .brand {
+            color: white !important;
+        }
+
+        .menu-wrapper {
+            
+            li a {
+                color: white !important;
+            }
+        }
+
+        .auth-container::before {
+            background-color: rgb(80, 80, 80);
+        }
+
+        .login a {
+            background-color: transparent !important;
+            color: white;
+        }
+
+        .logged-in {
+
+            .username {
+                color: white;
+            }
+
+            #auth-dropdown-button {
+                color: white;
+
+                &:hover, &.active {
+                    background-color: rgba($color: #fff, $alpha: 0.2) !important;
+                }
+            }
+        }
+
+    }
+
+
+}
+
+
+@media screen and (max-width: 991px) {
+    .root-navbar {
+
+        .container {
+
+            .menu-wrapper {
+                flex-basis: 100%;
+
+                ul {
+                    justify-content: space-evenly;
+                    column-gap: 5px;
+                }
+            }
+
+            .auth-container {
+                padding-left: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 520px) {
+    .root-navbar {
+
+        .container {
+
+            .logo-container {
+                padding: 0;
+
+                span {
+                    display: none;
+                }
+            }
+
+            .auth-container {
+                column-gap: 5px;
+                
+                span {
+                    padding: 5px;
+                    font-size: 0.9em;
+                }
+            }
+
+            
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .root-navbar {
+
+        .container {
+
+            .auth-container {
+                max-width: 180px;
+                
+            }
+
+            
+        }
+    }
+}
+

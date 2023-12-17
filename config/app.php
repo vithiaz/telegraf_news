@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,6 +18,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'name_slug' => Str::slug(env('APP_NAME', 'Laravel')),
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +85,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'id',
 
     /*
     |--------------------------------------------------------------------------

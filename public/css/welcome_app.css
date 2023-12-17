@@ -1,0 +1,251 @@
+.welcome-page .page-section-wrapper {
+  width: 100%;
+  height: 90vh;
+  min-height: 400px;
+  max-height: 700px;
+  position: relative;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  position: relative;
+  background-size: cover;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 100%;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body {
+  width: 100%;
+  max-width: 450px;
+  height: fit-content;
+  padding: 20px 10px;
+  position: relative;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body::before {
+  content: "";
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .page-title-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .page-title-container span {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-align: start;
+  color: white;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: fit-content;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .button-container .redirect-btn {
+  width: fit-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background-color: #4270EE;
+  outline: none;
+  border: none;
+  transition: all 0.1s ease-in-out;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .button-container .redirect-btn:hover {
+  cursor: pointer;
+  color: black;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .button-container .redirect-btn.red-bg {
+  background-color: #DD3333;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .button-container .redirect-btn.red-bg:hover {
+  background-color: #e66767;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .button-container .redirect-btn.green-bg {
+  background-color: #58EF3A;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .button-container .redirect-btn.green-bg:hover {
+  background-color: #88f473;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .button-container .redirect-btn.yellow-bg {
+  background-color: #E3E31F;
+  color: black;
+}
+.welcome-page .page-section-wrapper .swiper-wrapper .page-item .container .body .content .button-container .redirect-btn.yellow-bg:hover {
+  background-color: #afaf16;
+}
+.welcome-page .page-section-wrapper .pagination-wrapper {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 20px;
+  z-index: 3;
+}
+.welcome-page .page-section-wrapper .pagination-wrapper .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px 20px;
+}
+.welcome-page .page-section-wrapper .pagination-wrapper .container .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all ease-in-out 0.3s;
+}
+.welcome-page .page-section-wrapper .pagination-wrapper .container .swiper-pagination-bullet:hover {
+  cursor: pointer;
+  background-color: #4270EE;
+  border-radius: 7px;
+  width: 40px;
+}
+.welcome-page .page-section-wrapper .pagination-wrapper .container .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  border-radius: 7px;
+  width: 40px;
+}
+.welcome-page .page-information-wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.welcome-page .page-information-wrapper .container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.welcome-page .page-information-wrapper .container .hero-title-container {
+  width: 100%;
+}
+.welcome-page .page-information-wrapper .container .hero-title-container span {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper {
+  flex-basis: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 40px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  transition: all 0.3s ease-in-out;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li {
+  position: relative;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li:hover {
+  cursor: pointer;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 5px;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li a .image-container {
+  width: 40px;
+  height: fit-content;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li a .image-container img {
+  width: 100%;
+  height: fit-content;
+  object-fit: cover;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li a .label {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  max-width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  font-weight: 600;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li a .label span {
+  width: fit-content;
+  display: inline-block;
+  white-space: nowrap;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li a .label span .sport {
+  color: #DD3333;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li a .label span .env {
+  color: #58EF3A;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li a .label span .history {
+  color: #E3E31F;
+}
+.welcome-page .page-information-wrapper .container .body-main-wrapper .page-wrapper li.hovered a .label {
+  max-width: 200px;
+}
+.welcome-page .page-information-wrapper .container .social-media-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+.welcome-page .page-information-wrapper .container .social-media-wrapper a, .welcome-page .page-information-wrapper .container .social-media-wrapper span {
+  text-decoration: none;
+  position: relative;
+}
+.welcome-page .page-information-wrapper .container .social-media-wrapper a svg, .welcome-page .page-information-wrapper .container .social-media-wrapper span svg {
+  transition: 0.1s all ease-in-out;
+}
+.welcome-page .page-information-wrapper .container .social-media-wrapper a:hover svg, .welcome-page .page-information-wrapper .container .social-media-wrapper span:hover svg {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.welcome-page .page-information-wrapper .container .social-media-wrapper svg {
+  transform: scale(0.9);
+}/*# sourceMappingURL=welcome_app.css.map */

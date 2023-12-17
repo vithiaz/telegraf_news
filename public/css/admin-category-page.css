@@ -1,0 +1,212 @@
+.admin-category-page .container {
+  display: flex;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  justify-content: center;
+}
+.admin-category-page .container .content-card {
+  width: 100%;
+  height: fit-content;
+  padding: 10px 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.admin-category-page .container .content-card .content-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.admin-category-page .container .content-card .content-header .content-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 20px;
+  height: 35px;
+  flex-basis: 200px;
+}
+.admin-category-page .container .content-card .content-header .content-title span {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.admin-category-page .container .content-card .content-header .content-title span::before {
+  content: "";
+  width: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #4270EE;
+}
+.admin-category-page .container .content-card .content-header .form-select {
+  flex-basis: 240px;
+  background-color: white;
+}
+.admin-category-page .container .content-card .add-category-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.admin-category-page .container .content-card .add-category-container .title {
+  font-weight: 600;
+}
+.admin-category-page .container .content-card .add-category-container .input-group {
+  width: 450px;
+  flex-grow: 0;
+}
+.admin-category-page .container .content-card .add-category-container .input-group input {
+  background-color: white;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  text-transform: capitalize;
+}
+.admin-category-page .container .content-card .add-category-container .input-group .add-button {
+  width: fit-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background-color: #DD3333;
+  outline: none;
+  border: none;
+  transition: all 0.1s ease-in-out;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.admin-category-page .container .content-card .add-category-container .input-group .add-button:hover {
+  cursor: pointer;
+  background-color: #1C1C1C;
+}
+.admin-category-page .container .content-card .list-category-head {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 5px;
+}
+.admin-category-page .container .content-card .list-category-head .title {
+  flex-basis: 200px;
+  font-weight: 600;
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.admin-category-page .container .content-card .list-category-head .content-search {
+  flex-basis: 240px;
+  flex-grow: 1;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+}
+.admin-category-page .container .content-card .list-category-head .content-search input {
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  border-bottom: 1px solid #C9C9C9;
+}
+.admin-category-page .container .content-card .list-category-head .content-search input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.admin-category-page .container .content-card .list-category-head .content-search i {
+  cursor: pointer;
+}
+.admin-category-page .container .content-card .content-body {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.admin-category-page .container .content-card .content-body table {
+  font-size: 0.9em;
+}
+.admin-category-page .container .content-card .content-body table thead tr td {
+  font-weight: 600;
+}
+.admin-category-page .container .content-card .content-body table tbody tr .empty {
+  text-align: center;
+  padding: 120px 0;
+  color: #747474;
+}
+.admin-category-page .container .content-card .content-body table .delete-post-button {
+  width: fit-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background-color: #C9C9C9;
+  outline: none;
+  border: none;
+  transition: all 0.1s ease-in-out;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: black;
+}
+.admin-category-page .container .content-card .content-body table .delete-post-button:hover {
+  cursor: pointer;
+  background-color: #DD3333;
+  color: white;
+}
+.admin-category-page .container .content-card .content-body .pagination-wrapper {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+.admin-category-page .container .content-card .content-body .pagination-wrapper .pagination .page-item .page-link {
+  color: #4270EE;
+}
+.admin-category-page .container .content-card .content-body .pagination-wrapper .pagination .page-item:first-child .page-link,
+.admin-category-page .container .content-card .content-body .pagination-wrapper .pagination .page-item:last-child .page-link {
+  border-radius: 0;
+  color: #747474;
+}
+.admin-category-page .container .content-card .content-body .pagination-wrapper .pagination .page-item.active .page-link {
+  background-color: #4270EE;
+  color: white;
+  border-color: transparent;
+}
+
+@media screen and (max-width: 991px) {
+  .admin-category-page .container .content-card .content-header .content-title {
+    flex-grow: 3;
+  }
+  .admin-category-page .container .content-card .content-header .form-select {
+    flex-grow: 1;
+  }
+}
+@media screen and (max-width: 767px) {
+  .admin-category-page .container .content-card .add-category-container .input-group {
+    width: 100%;
+  }
+}/*# sourceMappingURL=admin-category-page.css.map */

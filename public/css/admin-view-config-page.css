@@ -1,0 +1,377 @@
+.admin-view-config .container {
+  display: flex;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  justify-content: center;
+}
+.admin-view-config .container .content-card {
+  width: 100%;
+  height: fit-content;
+  padding: 10px 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.admin-view-config .container .content-card .content-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.admin-view-config .container .content-card .content-header .content-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 20px;
+  height: 35px;
+  flex-basis: 200px;
+  flex-grow: 1;
+}
+.admin-view-config .container .content-card .content-header .content-title span {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.admin-view-config .container .content-card .content-header .content-title span::before {
+  content: "";
+  width: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #4270EE;
+}
+.admin-view-config .container .content-card .content-header .content-title.sport {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 20px;
+  height: 35px;
+}
+.admin-view-config .container .content-card .content-header .content-title.sport span {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.admin-view-config .container .content-card .content-header .content-title.sport span::before {
+  content: "";
+  width: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #DD3333;
+}
+.admin-view-config .container .content-card .content-header .content-title.env {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 20px;
+  height: 35px;
+}
+.admin-view-config .container .content-card .content-header .content-title.env span {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.admin-view-config .container .content-card .content-header .content-title.env span::before {
+  content: "";
+  width: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #58EF3A;
+}
+.admin-view-config .container .content-card .content-header .content-title.history {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 20px;
+  height: 35px;
+}
+.admin-view-config .container .content-card .content-header .content-title.history span {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.admin-view-config .container .content-card .content-header .content-title.history span::before {
+  content: "";
+  width: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #E3E31F;
+}
+.admin-view-config .container .content-card .content-body {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.admin-view-config .container .content-card .content-body .image-container {
+  width: 100%;
+  height: fit-content;
+  background-color: #E8E8E8;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.admin-view-config .container .content-card .content-body .image-container img {
+  width: 100%;
+  height: fit-content;
+  max-height: 400px;
+  object-fit: cover;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 20px;
+  row-gap: 20px;
+  column-gap: 10px;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image .message {
+  color: #747474;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image .button-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image .button-container #input-image {
+  display: none;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image .button-container .input-image-button.sport {
+  width: fit-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background-color: #DD3333;
+  outline: none;
+  border: none;
+  transition: all 0.1s ease-in-out;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image .button-container .input-image-button.sport:hover {
+  cursor: pointer;
+  background-color: #ec8a8a;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image .button-container .input-image-button.env {
+  width: fit-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background-color: #58EF3A;
+  outline: none;
+  border: none;
+  transition: all 0.1s ease-in-out;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image .button-container .input-image-button.env:hover {
+  cursor: pointer;
+  background-color: #a8f798;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image .button-container .input-image-button.history {
+  width: fit-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background-color: #E3E31F;
+  outline: none;
+  border: none;
+  transition: all 0.1s ease-in-out;
+  color: black;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image .button-container .input-image-button.history:hover {
+  cursor: pointer;
+  background-color: #eeee7a;
+}
+.admin-view-config .container .content-card .content-body .image-container .no-image.uploading > * {
+  display: none;
+}
+.admin-view-config .container .content-card .content-body .image-container .option-wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(28, 28, 28, 0.7);
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.admin-view-config .container .content-card .content-body .image-container .option-wrapper.uploading {
+  display: flex;
+}
+.admin-view-config .container .content-card .content-body .image-container .option-wrapper.uploading .remove-image-button {
+  display: none;
+}
+.admin-view-config .container .content-card .content-body .image-container .option-wrapper .remove-image-button {
+  width: fit-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background-color: #1C1C1C;
+  outline: none;
+  border: none;
+  transition: all 0.1s ease-in-out;
+  border: 1px solid white;
+  border-radius: 4px;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.admin-view-config .container .content-card .content-body .image-container .option-wrapper .remove-image-button:hover {
+  cursor: pointer;
+  background-color: white;
+}
+.admin-view-config .container .content-card .content-body .image-container .option-wrapper .remove-image-button:hover i, .admin-view-config .container .content-card .content-body .image-container .option-wrapper .remove-image-button:hover span {
+  color: #1C1C1C;
+}
+.admin-view-config .container .content-card .content-body .image-container .option-wrapper .remove-image-button i {
+  color: white;
+}
+.admin-view-config .container .content-card .content-body .image-container .option-wrapper .remove-image-button span {
+  color: white;
+}
+.admin-view-config .container .content-card .content-body .image-container .progress {
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  display: none;
+  z-index: 120;
+}
+.admin-view-config .container .content-card .content-body .image-container .progress.show {
+  display: flex;
+}
+.admin-view-config .container .content-card .content-body .image-container .progress .progress-bar.sport {
+  background-color: #DD3333;
+}
+.admin-view-config .container .content-card .content-body .image-container .progress .progress-bar.env {
+  background-color: #58EF3A;
+}
+.admin-view-config .container .content-card .content-body .image-container .progress .progress-bar.history {
+  background-color: #E3E31F;
+}
+.admin-view-config .container .content-card .content-body .image-container:hover .option-wrapper {
+  cursor: pointer;
+  display: flex;
+}
+.admin-view-config .container .content-card .content-body .button-wrapper {
+  width: 100%;
+  height: fit-content;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  transition: all ease-in-out 0.3s;
+  overflow: hidden;
+}
+.admin-view-config .container .content-card .content-body .button-wrapper.disabled {
+  max-height: 0vh;
+}
+.admin-view-config .container .content-card .content-body .button-wrapper .primary-btn {
+  width: fit-content;
+  padding-left: 18px;
+  padding-right: 18px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  background-color: #1C1C1C;
+  outline: none;
+  border: none;
+  transition: all 0.1s ease-in-out;
+  border: 1px solid #4270EE;
+  border-radius: 4px;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.admin-view-config .container .content-card .content-body .button-wrapper .primary-btn.sport {
+  border: 1px solid #DD3333;
+}
+.admin-view-config .container .content-card .content-body .button-wrapper .primary-btn.sport:hover {
+  cursor: pointer;
+  background-color: #DD3333;
+}
+.admin-view-config .container .content-card .content-body .button-wrapper .primary-btn.env {
+  border: 1px solid #58EF3A;
+}
+.admin-view-config .container .content-card .content-body .button-wrapper .primary-btn.env:hover {
+  cursor: pointer;
+  background-color: #58EF3A;
+}
+.admin-view-config .container .content-card .content-body .button-wrapper .primary-btn.history {
+  border: 1px solid #E3E31F;
+}
+.admin-view-config .container .content-card .content-body .button-wrapper .primary-btn.history:hover {
+  cursor: pointer;
+  background-color: #E3E31F;
+  color: black;
+}/*# sourceMappingURL=admin-view-config-page.css.map */

@@ -1,0 +1,107 @@
+// @use '../_var' as *;
+@import '../_var';
+
+$primary_color: $PrimaryRed;
+
+.search-page {
+    padding-top: 80px;
+    
+    .container {
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 20px;
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            
+            .content-head {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .secton-title {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    padding-left: $TextAfterBoxPaddingLeft;
+                    position: relative;
+    
+                    .sub-title {
+                        font-size: 1rem;
+                        color: $TextLighter;
+                        color: $primary_color;
+                    }
+                    
+                    .title {
+                        font-size: 0.9rem;
+                        color: black;
+                    }
+    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        width: $BoxBeforeTitleWidth;
+                        background-color: $primary_color;
+                    }
+                }
+    
+                .search-result-count {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 5px;
+                    font-size: 0.9rem;
+                    color: black;
+                }
+            }
+
+            .content-body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .card-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: center;
+                    gap: 20px;
+                    width: 100%;
+                    height: fit-content;
+                    font-size: 0.9rem;
+                    flex-wrap: wrap;
+
+                    .no-item {
+                        width: 100%;
+                        height: 250px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        align-items: center;
+                        justify-content: center;
+                        color: rgb(70, 70, 70);
+
+                        i {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+
+                .card-pagination {
+                    padding: 20px 0;
+
+                    @include pagination-style($bg_color: $PrimaryRed, $links_color: $PrimaryRed);
+                }
+            }
+
+
+
+        }
+    }
+}

@@ -1,0 +1,210 @@
+.news-page {
+  padding-bottom: 20px;
+}
+.news-page .container {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.news-page .container .content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.news-page .container .content-section .section-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 20px;
+  height: 35px;
+}
+.news-page .container .content-section .section-title span {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.news-page .container .content-section .section-title span::before {
+  content: "";
+  width: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #DD3333;
+}
+.news-page .container .content-section .section-title span {
+  font-size: 1.2rem;
+}
+.news-page .container .content-section .content-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 20px;
+}
+.news-page .container .content-section .content-head .hero-post {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 600px;
+  flex-grow: 1;
+  row-gap: 10px;
+}
+.news-page .container .content-section .content-head .hero-post .image-container {
+  height: fit-content;
+  flex-basis: 320px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.news-page .container .content-section .content-head .hero-post .image-container img {
+  width: 100%;
+  height: fit-content;
+  transition: all 0.3s ease-in-out;
+}
+.news-page .container .content-section .content-head .hero-post .image-container img:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+.news-page .container .content-section .content-head .hero-post .details {
+  flex-basis: 280px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  gap: 5px;
+}
+.news-page .container .content-section .content-head .hero-post .details .title, .news-page .container .content-section .content-head .hero-post .details .category {
+  font-weight: 600;
+}
+.news-page .container .content-section .content-head .hero-post .details .date, .news-page .container .content-section .content-head .hero-post .details .category, .news-page .container .content-section .content-head .hero-post .details .details-text {
+  font-size: 0.8em;
+}
+.news-page .container .content-section .content-head .hero-post .details .title a {
+  color: black;
+  text-decoration: none;
+}
+.news-page .container .content-section .content-head .hero-post .details .title a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.news-page .container .content-section .content-head .hero-post .details .category {
+  padding: 5px 10px;
+  height: fit-content;
+  width: fit-content;
+  background-color: #1C1C1C;
+  color: white;
+}
+.news-page .container .content-section .content-head .hero-post .details .details-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-align: justify;
+}
+.news-page .container .content-section .content-head .categories {
+  flex-basis: 300px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.news-page .container .content-section .content-head .categories .title {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+.news-page .container .content-section .content-head .categories .wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.news-page .container .content-section .content-head .categories .wrapper .card {
+  display: block;
+  padding: 5px 10px;
+  width: fit-content;
+  height: fit-content;
+  background-color: #1C1C1C;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8em;
+  border-radius: 0;
+  text-decoration: none;
+  transition: all 0.3 ease-in-out;
+}
+.news-page .container .content-section .content-head .categories .wrapper .card:hover, .news-page .container .content-section .content-head .categories .wrapper .card.active {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+.news-page .container .content-section .content-head .categories .wrapper .card.active:hover {
+  background-color: #1C1C1C;
+  color: white;
+}
+.news-page .container .content-section .content-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.news-page .container .content-section .content-body .card-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: fit-content;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+.news-page .container .content-section .content-body .card-wrapper .no-item {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: rgb(70, 70, 70);
+}
+.news-page .container .content-section .content-body .card-wrapper .no-item i {
+  font-size: 1.8rem;
+}
+.news-page .container .content-section .content-body .card-wrapper .no-item span {
+  font-size: 0.8rem;
+}
+.news-page .container .content-section .content-body .card-pagination {
+  padding: 20px 0;
+}
+.news-page .container .content-section .content-body .card-pagination .pagination .page-item .page-link {
+  color: #DD3333;
+}
+.news-page .container .content-section .content-body .card-pagination .pagination .page-item:first-child .page-link,
+.news-page .container .content-section .content-body .card-pagination .pagination .page-item:last-child .page-link {
+  border-radius: 0;
+  color: #747474;
+}
+.news-page .container .content-section .content-body .card-pagination .pagination .page-item.active .page-link {
+  background-color: #DD3333;
+  color: white;
+  border-color: transparent;
+}/*# sourceMappingURL=news-page.css.map */

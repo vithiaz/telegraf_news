@@ -1,0 +1,133 @@
+.category-page {
+  padding-top: 80px;
+}
+.category-page .container {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+.category-page .container .content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.category-page .container .content-section .content-head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.category-page .container .content-section .content-head .secton-title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 20px;
+  position: relative;
+}
+.category-page .container .content-section .content-head .secton-title .sub-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #747474;
+}
+.category-page .container .content-section .content-head .secton-title .title {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.category-page .container .content-section .content-head .secton-title .title::first-letter {
+  color: #DD3333;
+}
+.category-page .container .content-section .content-head .secton-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  background-color: #DD3333;
+}
+.category-page .container .content-section .content-head .categories-card-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.category-page .container .content-section .content-head .categories-card-wrapper .card {
+  display: block;
+  padding: 5px 10px;
+  width: fit-content;
+  height: fit-content;
+  background-color: #1C1C1C;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8em;
+  border-radius: 0;
+  text-decoration: none;
+  transition: all 0.3 ease-in-out;
+}
+.category-page .container .content-section .content-head .categories-card-wrapper .card:hover, .category-page .container .content-section .content-head .categories-card-wrapper .card.active {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+.category-page .container .content-section .content-head .categories-card-wrapper .card.active:hover {
+  background-color: #1C1C1C;
+  color: white;
+}
+.category-page .container .content-section .content-head .categories-card-wrapper .more-btn {
+  background-color: #DD3333;
+}
+.category-page .container .content-section .content-head .categories-card-wrapper .more-btn:hover {
+  background-color: #1C1C1C;
+  color: white;
+}
+.category-page .container .content-section .content-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.category-page .container .content-section .content-body .card-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: fit-content;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+.category-page .container .content-section .content-body .card-wrapper .no-item {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: rgb(70, 70, 70);
+}
+.category-page .container .content-section .content-body .card-wrapper .no-item i {
+  font-size: 1.8rem;
+}
+.category-page .container .content-section .content-body .card-wrapper .no-item span {
+  font-size: 0.8rem;
+}
+.category-page .container .content-section .content-body .card-pagination {
+  padding: 10px 0;
+}
+.category-page .container .content-section .content-body .card-pagination .pagination .page-item .page-link {
+  color: #DD3333;
+}
+.category-page .container .content-section .content-body .card-pagination .pagination .page-item:first-child .page-link,
+.category-page .container .content-section .content-body .card-pagination .pagination .page-item:last-child .page-link {
+  border-radius: 0;
+  color: #747474;
+}
+.category-page .container .content-section .content-body .card-pagination .pagination .page-item.active .page-link {
+  background-color: #DD3333;
+  color: white;
+  border-color: transparent;
+}/*# sourceMappingURL=category-page.css.map */

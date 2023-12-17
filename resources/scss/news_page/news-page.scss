@@ -1,0 +1,168 @@
+// @use '../_var' as *;
+@import '../_var';
+
+$primary_color: $PrimaryRed;
+
+.news-page {
+    padding-bottom: 20px;
+    
+    .container {
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+            .section-title {
+                @include slot-title-style($primary_color);
+                
+                span {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .content-head {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                column-gap: 10px;
+                row-gap: 20px;
+    
+                .hero-post {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    flex-basis: 600px;
+                    flex-grow: 1;
+                    row-gap: 10px;
+    
+                    .image-container {
+                        height: fit-content;
+                        flex-basis: 320px;
+                        flex-grow: 1;
+                        overflow: hidden;
+                        
+                        img {
+                            width: 100%;
+                            height: fit-content;
+                            transition: all .3s ease-in-out;
+                        }
+                        img:hover {
+                            cursor: pointer;
+                            transform: scale(1.3);
+                        }
+                    }
+                    
+                    .details {
+                        flex-basis: 280px;
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0 10px;
+                        gap: 5px;
+    
+                        .title, .category {
+                            font-weight: 600;
+                        }
+                        
+                        .date, .category, .details-text {
+                            font-size: 0.8em;
+                        }
+
+                        .title {
+                            a {
+                                color:black;
+                                text-decoration: none;
+                            }
+                            a:hover {
+                                cursor: pointer;
+                                text-decoration: underline;
+                            }
+                        }
+    
+                        .category {
+                            padding: 5px 10px;
+                            height: fit-content;
+                            width: fit-content;
+                            background-color: $PrimaryBlack;
+                            color: white;
+                        }
+    
+                        .details-text {
+                            @include text-column-limit(3);
+                            text-align: justify;
+                        }
+                    }
+                }
+    
+                .categories {
+                    flex-basis: 300px;
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    
+                    
+                    .title {
+                        width: 100%;
+                        display: grid;
+                        place-items: center;
+                        font-size: 0.9em;
+                        font-weight: 600;
+                    }
+                    
+                    .wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        flex-wrap: wrap;                 
+    
+                        .card {
+                            @include category-card-small();
+                        }
+                    }
+    
+                }
+            }
+
+            .content-body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+
+                .card-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: center;
+                    gap: 20px;
+                    width: 100%;
+                    height: fit-content;
+                    font-size: 0.9rem;
+                    flex-wrap: wrap;
+
+                    .no-item {
+                        @include wrapper-empty;
+                    }
+                }
+
+                .card-pagination {
+                    padding: 20px 0;
+
+                    @include pagination-style($bg_color: $PrimaryRed, $links_color: $PrimaryRed);
+                }
+            }
+        }
+    }
+}
