@@ -62,7 +62,11 @@ class Homepage extends Component
     public function get_first_paragraph($body) {
         $dom = new DOMDocument;
         $dom->loadHTML($body);
-        return $dom->getElementsByTagName('p')->item(0)->nodeValue;
+        if ($dom != null) {
+            return $dom->getElementsByTagName('p')->item(0)->nodeValue;
+        } else {
+            return '';
+        }
     }
 
 }
