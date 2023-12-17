@@ -42,5 +42,12 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('user1234'),
         ]);
 
+        Pages::create([
+            "name" => "News",
+            "name_slug" => "news",
+            "logo_img" => "",
+            "wallpaper_img" => "",
+        ]);
+
     }
 }
