@@ -60,13 +60,12 @@ class Homepage extends Component
     }
 
     public function get_first_paragraph($body) {
-        $dom = new DOMDocument;
-        $dom->loadHTML($body);
-        if ($dom != null) {
+        if ($body != null) {
+            $dom = new DOMDocument;
+            $dom->loadHTML($body);
             return $dom->getElementsByTagName('p')->item(0)->nodeValue;
-        } else {
-            return '';
         }
+        return '';
     }
 
 }
